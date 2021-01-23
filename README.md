@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/johnom-commits/job4j_forum.svg?branch=main)](https://travis-ci.org/johnom-commits/job4j_forum)
+[![codecov](https://codecov.io/gh/johnom-commits/job4j_forum/branch/main/graph/badge.svg?token=RPS396733U)](https://codecov.io/gh/johnom-commits/job4j_forum)
 # job4j_forum
 
 ### Описание
