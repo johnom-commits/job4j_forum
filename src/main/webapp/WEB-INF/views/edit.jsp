@@ -26,7 +26,7 @@
                     <a class="nav-link text-white" href="#">User: ${user}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="logout">Sign out</a>
+                    <a class="nav-link text-white" href="/logout">Sign out</a>
                 </li>
             </ul>
         </span>

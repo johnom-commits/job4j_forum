@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.forum.model.User;
-import ru.job4j.forum.repository.MemUsers;
+import ru.job4j.forum.repository.UserRepository;
 
 @Controller
 public class RegControl {
     private final PasswordEncoder encoder;
-    private final MemUsers users;
+    private final UserRepository users;
 
-    public RegControl(PasswordEncoder encoder, MemUsers users) {
+    public RegControl(PasswordEncoder encoder, UserRepository users) {
         this.encoder = encoder;
         this.users = users;
     }

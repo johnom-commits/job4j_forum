@@ -2,17 +2,29 @@ package ru.job4j.forum.model;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+@Entity
 @Data
+@Table(name = "topics")
+@NoArgsConstructor
 public class Topic {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false, length = 500)
     private String name;
     private String description;
+    @org.hibernate.annotations.CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar created;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User author;
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Answer> answers = new ArrayList<>();
 
     public static Topic of(int id, String name, String description, User author) {
@@ -33,3 +45,5 @@ public class Topic {
         answers.addAll(list);
     }
 }
+
+

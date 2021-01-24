@@ -5,15 +5,23 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
 
 @Data
+@Entity
+@Table(name = "users")
 public class User implements UserDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(length = 50, nullable = false, unique = true)
     private String username;
+    @Column(length = 500, nullable = false)
     private String password;
     private boolean enabled;
+    @Column(length = 100, nullable = false, unique = true)
     private String email;
 
     public static User of(int id, String username, String password, boolean enabled) {

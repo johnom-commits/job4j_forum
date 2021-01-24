@@ -55,7 +55,7 @@ public class TopicControl {
 
         Topic topic = topicService.getTopicById(Integer.parseInt(topic_id));
         topic.addAnswer(answer);
-        topicService.update(topic);
+        topicService.save(topic);
         return new RedirectView("/topic/" + topic_id);
     }
 }

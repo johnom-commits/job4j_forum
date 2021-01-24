@@ -2,31 +2,27 @@ package ru.job4j.forum.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Topic;
-import ru.job4j.forum.repository.MemTopics;
+import ru.job4j.forum.repository.TopicRepository;
 
 import java.util.List;
 
 @Service
 public class TopicService {
-    private MemTopics story;
+    private TopicRepository story;
 
-    public TopicService(MemTopics story) {
+    public TopicService(TopicRepository story) {
         this.story = story;
     }
 
     public List<Topic> getAll() {
-        return story.getAll();
+        return (List<Topic>) story.findAll();
     }
 
     public Topic getTopicById(int id) {
-        return story.getTopicById(id);
+        return story.findById(id).get();
     }
 
     public void save(Topic topic) {
         story.save(topic);
-    }
-
-    public void update(Topic topic) {
-        story.update(topic);
     }
 }
