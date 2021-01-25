@@ -24,7 +24,7 @@ public class Topic {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User author;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Answer> answers = new ArrayList<>();
 
     public static Topic of(int id, String name, String description, User author) {
