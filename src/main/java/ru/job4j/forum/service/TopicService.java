@@ -15,7 +15,7 @@ public class TopicService {
     }
 
     public List<Topic> getAll() {
-        return (List<Topic>) story.findAll();
+        return story.findAll();
     }
 
     public Topic getTopicById(int id) {
