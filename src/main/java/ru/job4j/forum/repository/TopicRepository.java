@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TopicRepository extends CrudRepository<Topic, Integer> {
     @Override
-    @Query("select t from Topic as t join fetch t.answers")
+    @Query("select distinct t from Topic as t join fetch t.answers")
     List<Topic> findAll();
 }

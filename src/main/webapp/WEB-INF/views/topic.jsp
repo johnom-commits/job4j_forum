@@ -24,7 +24,7 @@
                     <a class="nav-link text-white" href="#">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">User: ${user}</a>
+                    <a class="nav-link text-white" href="#">User: ${user.username}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/logout">Sign out</a>
