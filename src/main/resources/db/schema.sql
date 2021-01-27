@@ -1,3 +1,11 @@
+CREATE TABLE IF NOT EXISTS users (
+   id serial PRIMARY KEY,
+   username varchar(50) NOT NULL UNIQUE,
+   password varchar(500) NOT NULL,
+   enabled boolean,
+   email varchar(100) NOT NULL UNIQUE
+);
+
 CREATE TABLE IF NOT EXISTS topics (
   id serial PRIMARY KEY,
   name varchar(500) NOT NULL,
@@ -17,13 +25,5 @@ CREATE TABLE IF NOT EXISTS topics_answers (
     topic_id integer REFERENCES topics (id),
     answers_id integer REFERENCES answers (id),
     PRIMARY KEY (topic_id, answers_id)
-);
-
-CREATE TABLE IF NOT EXISTS users (
-    id serial PRIMARY KEY,
-    username varchar(50) NOT NULL UNIQUE,
-    password varchar(500) NOT NULL,
-    enabled boolean,
-    email varchar(100) NOT NULL UNIQUE
 );
 
